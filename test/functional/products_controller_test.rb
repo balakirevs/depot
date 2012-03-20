@@ -45,9 +45,7 @@ class ProductsControllerTest < ActionController::TestCase
   test "should update product" do
     put :update, :id => @product.to_param, :product => @update
     assert_redirected_to product_path(assigns(:product))
-  end
-
-  # ...
+  end 
 
   test "should destroy product" do
     assert_difference('Product.count', -1) do
@@ -56,4 +54,5 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
-end
+end  
+
