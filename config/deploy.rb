@@ -1,12 +1,12 @@
 # be sure to change these
-set :user, 'root'
+set :user, 'user'
 set :domain, 'depot.yourhost.com'
 set :application, 'depot'
  
 # adjust if you are using RVM, remove if you are not
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require "rvm/capistrano"
-set :rvm_ruby_string, '1.9.2'
+set :rvm_ruby_string, '1.9.2-p290'
 set :rvm_type, :user
  
 # file paths
@@ -20,15 +20,15 @@ role :web, domain
 role :db, domain, :primary => true
  
 # you might need to set this if you aren't seeing password prompts
-#default_run_options[:pty] = true
+default_run_options[:pty] = true
  
 # As Capistrano executes in a non-interactive mode and therefore doesn't cause
 # any of your shell profile scripts to be run, the following might be needed
 # if (for example) you have locally installed gems or applications.  Note:
 # this needs to contain the full values for the variables set, not simply
 # the deltas.
-# default_environment['PATH']='<your paths>:/usr/local/bin:/usr/bin:/bin'
-# default_environment['GEM_PATH']='<your paths>:/usr/lib/ruby/gems/1.8'
+ default_environment['PATH']='<your paths>:/usr/local/bin:/usr/bin:/bin'
+ default_environment['GEM_PATH']='<your paths>:/usr/lib/ruby/gems/1.8'
  
 # miscellaneous options
 set :deploy_via, :remote_cache
