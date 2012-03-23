@@ -9,6 +9,7 @@ gem 'will_paginate', '3.0.3'
 gem 'sqlite3'
 group :production do
   gem 'mysql'
+  gem 'pg', '0.12.2'
 end
 
 
