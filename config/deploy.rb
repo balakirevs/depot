@@ -1,13 +1,13 @@
 # be sure to change these
 set :user, 'user'
-set :domain, 'depot.yourhost.com'
+set :domain, 'depot.com'
 set :application, 'depot'
  
 # adjust if you are using RVM, remove if you are not
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require "rvm/capistrano"
-set :rvm_ruby_string, '1.9.2-p290'
-set :rvm_type, :user
+#$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+#require "rvm/capistrano"
+#set :rvm_ruby_string, '1.9.2-p290'
+#set :rvm_type, :user
  
 # file paths
 set :repository,  "#{user}@#{domain}:git/#{application}.git" 
@@ -27,11 +27,11 @@ default_run_options[:pty] = true
 # if (for example) you have locally installed gems or applications.  Note:
 # this needs to contain the full values for the variables set, not simply
 # the deltas.
- default_environment['PATH']='<your paths>:/usr/local/bin:/usr/bin:/bin'
- default_environment['GEM_PATH']='<your paths>:/usr/lib/ruby/gems/1.8'
+ #default_environment['PATH']='<your paths>:/usr/local/bin:/usr/bin:/bin'
+ #default_environment['GEM_PATH']='<your paths>:/usr/lib/ruby/gems/1.8'
  
 # miscellaneous options
-set :deploy_via, :remote_cache
+#set :deploy_via, :remote_cache
 set :scm, 'git'
 set :branch, 'master'
 set :scm_verbose, true
